@@ -919,9 +919,13 @@ PrefabInstance:
       value: Player Rocket
       objectReference: {fileID: 0}
     - target: {fileID: 6551596945607169490, guid: 0503616d0352942878731a7fca3e88ac, type: 3}
-      propertyPath: sceneLoadingDelay
-      value: 1.2
-      objectReference: {fileID: 0}
+      propertyPath: finishAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: e1338af9d28d34f53851d105485933ac, type: 3}
+    - target: {fileID: 6551596945607169490, guid: 0503616d0352942878731a7fca3e88ac, type: 3}
+      propertyPath: obstacleAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 9cb4edbbc3e1b4c87886b388fdeb8d95, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -4,14 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
 {
-    Movement movementScript;
-    int currentScene;
     [SerializeField] float sceneLoadingDelay = 2f;
+    [SerializeField] AudioClip finishAudio;
+    [SerializeField] AudioClip obstacleAudio;
+
+    Movement movementScript;
+    AudioSource audioSource;
+    int currentScene;
 
     void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
         movementScript = GetComponent<Movement>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter(Collision other)
@@ -22,19 +27,21 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Friendly Collision");
                 break;
             case "Finish":
-                LevelSequenceHandler("LoadNextLevel");
+                LevelSequenceHandler("LoadNextLevel", finishAudio);
                 break;
             default:
-                LevelSequenceHandler("ReloadLevel");
+                LevelSequenceHandler("ReloadLevel", obstacleAudio);
                 break;
         }
     }
 
-    void LevelSequenceHandler(string methodName)
+    void LevelSequenceHandler(string methodName, AudioClip audio)
     {
         //todo add sfx and particles
+        audioSource.PlayOneShot(audio);
         movementScript.enabled = false;
         Invoke(methodName, sceneLoadingDelay);
+
     }
 
 
