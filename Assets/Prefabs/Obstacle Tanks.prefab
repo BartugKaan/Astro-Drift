@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 94518265524432698}
   m_Layer: 0
   m_Name: Obstacle Tanks
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,8 +54,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.0800543, y: 4.2117515, z: 8.756304}
-  m_Center: {x: -0.0094771385, y: 2.2458203, z: -1.6269664}
+  m_Size: {x: 4.1689553, y: 4.2117515, z: 8.756304}
+  m_Center: {x: 0.024701834, y: 2.2458203, z: -1.6269665}
 --- !u!1001 &7632062242161188406
 PrefabInstance:
   m_ObjectHideFlags: 0
