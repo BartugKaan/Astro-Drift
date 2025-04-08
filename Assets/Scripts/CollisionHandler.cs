@@ -10,7 +10,9 @@ public class CollisionHandler : MonoBehaviour
 
     Movement movementScript;
     AudioSource audioSource;
+
     int currentScene;
+    bool isControllable = true;
 
     void Start()
     {
@@ -21,6 +23,9 @@ public class CollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+
+        if (!isControllable) { return; }
+
         switch (other.gameObject.tag)
         {
             case "Friendly":
@@ -37,22 +42,22 @@ public class CollisionHandler : MonoBehaviour
 
     void LevelSequenceHandler(string methodName, AudioClip audio)
     {
-        //todo add sfx and particles
+        //todo add particles
         audioSource.PlayOneShot(audio);
         movementScript.enabled = false;
         Invoke(methodName, sceneLoadingDelay);
-
     }
 
 
     void ReloadLevel()
     {
+        isControllable = false;
         SceneManager.LoadScene(currentScene);
     }
 
     void LoadNextLevel()
     {
-
+        isControllable = false;
         int nextSceneIndex = currentScene + 1;
 
         if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)

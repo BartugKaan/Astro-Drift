@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 55d2593492c264fc19c9f1e1ca8a89b0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -318,7 +318,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -918,14 +918,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 6551596945607169490, guid: 0503616d0352942878731a7fca3e88ac, type: 3}
-      propertyPath: finishAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: e1338af9d28d34f53851d105485933ac, type: 3}
-    - target: {fileID: 6551596945607169490, guid: 0503616d0352942878731a7fca3e88ac, type: 3}
-      propertyPath: obstacleAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 9cb4edbbc3e1b4c87886b388fdeb8d95, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
