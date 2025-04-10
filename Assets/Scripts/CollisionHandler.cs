@@ -5,8 +5,12 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float sceneLoadingDelay = 2f;
-    [SerializeField] AudioClip finishAudio;
-    [SerializeField] AudioClip obstacleAudio;
+    [SerializeField] AudioClip successAudio;
+    [SerializeField] AudioClip crashAudio;
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem crashParticles;
+
+
 
     Movement movementScript;
     AudioSource audioSource;
@@ -32,17 +36,18 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("Friendly Collision");
                 break;
             case "Finish":
-                LevelSequenceHandler("LoadNextLevel", finishAudio);
+                LevelSequenceHandler("LoadNextLevel", successAudio, successParticles);
                 break;
             default:
-                LevelSequenceHandler("ReloadLevel", obstacleAudio);
+                LevelSequenceHandler("ReloadLevel", crashAudio, crashParticles);
                 break;
         }
     }
 
-    void LevelSequenceHandler(string methodName, AudioClip audio)
+    void LevelSequenceHandler(string methodName, AudioClip audio, ParticleSystem particleSystem)
     {
         //todo add particles
+        particleSystem.Play();
         audioSource.PlayOneShot(audio);
         movementScript.enabled = false;
         Invoke(methodName, sceneLoadingDelay);
