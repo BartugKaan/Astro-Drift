@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class CollisionHandler : MonoBehaviour
@@ -11,12 +12,12 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] ParticleSystem crashParticles;
 
 
-
     Movement movementScript;
     AudioSource audioSource;
 
     int currentScene;
     bool isControllable = true;
+    bool isCollidable = true;
 
     void Start()
     {
@@ -25,10 +26,29 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    void FixedUpdate()
+    {
+        RespondToDebugKeys();
+    }
+
+    //For debug, delete on Relase
+    private void RespondToDebugKeys()
+    {
+        if (Keyboard.current.lKey.wasPressedThisFrame)
+        {
+            LoadNextLevel();
+        }
+        else if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            isCollidable = !isCollidable;
+            Debug.Log("İsCollidable is" + isCollidable);
+        }
+    }
+
     void OnCollisionEnter(Collision other)
     {
 
-        if (!isControllable) { return; }
+        if (!isControllable || !isCollidable) { return; }
 
         switch (other.gameObject.tag)
         {
@@ -46,7 +66,6 @@ public class CollisionHandler : MonoBehaviour
 
     void LevelSequenceHandler(string methodName, AudioClip audio, ParticleSystem particleSystem)
     {
-        //todo add particles
         particleSystem.Play();
         audioSource.PlayOneShot(audio);
         movementScript.enabled = false;

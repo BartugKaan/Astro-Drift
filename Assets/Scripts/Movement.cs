@@ -36,6 +36,11 @@ public class Movement : MonoBehaviour
 
     private void ProcessThrust()
     {
+        StartThrusting();
+    }
+
+    private void StartThrusting()
+    {
         if (thrust.IsPressed())
         {
             rigidBody.AddRelativeForce(Vector3.up * thrustStrength * Time.fixedDeltaTime);

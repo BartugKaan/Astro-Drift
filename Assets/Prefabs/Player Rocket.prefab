@@ -323,6 +323,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2eda7db2351e4d95bdc3dd9a609a60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadNextLevelKey:
+    m_Name: Load Next Level Key
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c0d7304b-be5b-496d-8464-b604e28cc8fe
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 344efc8c-4490-409b-96ab-59e33e4a3a1f
+      m_Path: <Keyboard>/l
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Load Next Level Key
+      m_Flags: 0
+    m_Flags: 0
+  setCollidable:
+    m_Name: Set Collidable
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8941f355-e46a-486e-ab20-2966041ceb5c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 0ee583df-ec41-44f5-92c1-790c2ed492b7
+      m_Path: <Keyboard>/c
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Set Collidable
+      m_Flags: 0
+    m_Flags: 0
   sceneLoadingDelay: 1.2
   successAudio: {fileID: 8300000, guid: e1338af9d28d34f53851d105485933ac, type: 3}
   crashAudio: {fileID: 8300000, guid: 9cb4edbbc3e1b4c87886b388fdeb8d95, type: 3}
