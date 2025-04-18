@@ -28,7 +28,7 @@ _A fast-paced space escape game where your piloting skills are the only way out.
 
 ## Play the Game
 You can play **Astro-Drift** from itch.io.
-👉 [Play on itch.io]([https://yourusername.itch.io/astro-drift](https://bartugkaan.itch.io/astro-drift))
+👉 [Play on itch.io](https://bartugkaan.itch.io/astro-drift)
 
 ### Objective
 
