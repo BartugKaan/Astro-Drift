@@ -26,24 +26,6 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void FixedUpdate()
-    {
-        RespondToDebugKeys();
-    }
-
-    //For debug, delete on Relase
-    private void RespondToDebugKeys()
-    {
-        if (Keyboard.current.lKey.wasPressedThisFrame)
-        {
-            LoadNextLevel();
-        }
-        else if (Keyboard.current.cKey.wasPressedThisFrame)
-        {
-            isCollidable = !isCollidable;
-            Debug.Log("İsCollidable is" + isCollidable);
-        }
-    }
 
     void OnCollisionEnter(Collision other)
     {

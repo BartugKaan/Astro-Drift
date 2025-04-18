@@ -1136,7 +1136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ROCKET BOOSTER
+  m_text: "ASTRO DR\u0130FT"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 09fd4cc8f43ee4e849609760df313518, type: 2}
   m_sharedMaterial: {fileID: 5290747277238497943, guid: 09fd4cc8f43ee4e849609760df313518, type: 2}
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87
+  m_fontSize: 113.4
   m_fontSizeBase: 57.41
   m_fontWeight: 400
   m_enableAutoSizing: 1
