@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
     public void ExitGame()
     {
-        if (isPlayPressed)
+        if (isPlayPressed == false)
         {
             Application.Quit();
         }
